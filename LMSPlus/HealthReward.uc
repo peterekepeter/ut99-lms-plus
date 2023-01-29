@@ -28,6 +28,7 @@ function ScoreKill(Pawn Killer, Pawn Other)
 		P = PlayerPawn(Killer);
 		if (P != None)
 		{
+			P.ClearProgressMessages();
 			P.SetProgressTime(2);
 			P.SetProgressColor(WHITE, 0);
 			P.SetProgressMessage(message, 0);
