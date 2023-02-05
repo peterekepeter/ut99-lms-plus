@@ -13,7 +13,7 @@ function ScoreKill(Pawn Killer, Pawn Other)
 
 	amount = PRI.Score * 10;
 
-	if (Killer != Other && amount > 0)
+	if (Killer != None && Killer != Other && amount > 0)
 	{
 		if (amount > MAX_HP) 
 		{
