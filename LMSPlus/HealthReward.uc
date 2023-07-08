@@ -1,6 +1,7 @@
 class HealthReward extends Mutator;
 
 const MAX_HP = 100;
+const FIXED_REWARD_AMOUNT = 50;
 var color WHITE;
 
 function ScoreKill(Pawn Killer, Pawn Other)
@@ -11,7 +12,8 @@ function ScoreKill(Pawn Killer, Pawn Other)
 	local string message;
 	PRI = Other.PlayerReplicationInfo;
 
-	amount = PRI.Score * 10;
+	// amount = PRI.Score * 10;
+	amount = FIXED_REWARD_AMOUNT;
 
 	if (Killer != None && Killer != Other && amount > 0)
 	{
@@ -24,7 +26,7 @@ function ScoreKill(Pawn Killer, Pawn Other)
 		{
 			Killer.Health = MAX_HP;
 		}
-		message = "+"$amount$"hp for fragging "$PRI.PlayerName;
+		message = "+" $ amount $ "hp for fragging " $ PRI.PlayerName;
 		P = PlayerPawn(Killer);
 		if (P != None)
 		{
